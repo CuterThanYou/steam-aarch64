@@ -32,7 +32,7 @@ if [[ ${PAGE_SIZE} != 4096 ]]; then
             --text "muvm is not installed. Steam requires muvm to run on AArch64 systems with page sizes other than 4096 byes. Your system's page size is ${PAGE_SIZE} bytes"
         exit -2
     fi
-    muvm /usr/bin/steam-muvm "${@}"
+    exec muvm /usr/bin/steam-muvm "${@}"
 else
-    FEXInterpreter /usr/bin/steam
+    exec FEXInterpreter /usr/bin/steam
 fi
